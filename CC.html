@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cc.css">
+</head>
+<p class="Credit">CREDIT CARD</p>
+<body>
+    <form action="/process-payment" method="POST">
+    <div class="cc">
+        <label for="name">Cardholder Name: </label>
+        <input type="text" id="name" name="name" placeholder="firstName lastName" required>
+    </div>
+    <div class="cc">
+        <label for="cardNumber">Card Number: </label>
+        <input type="text" id="cardNumber" name="cardNumber" maxlength="19" placeholder="1234 5678 9123 4567" required>
+    </div>
+    <div class="cc">
+    <label for="cvv">CVV: </label>
+    <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123" required>
+    </div>
+    <div class="cc">
+    <label for="expiryDate">Expiration Date: </label>
+    <input type="month" id="expirationDate" name="expirationDate" required>
+    </div>
+    <div class="cc">
+    <button type="submit">Time to gamble!</button>
+    </div>
+    </form>
+    <h2><a href="index.html">Credit Card Payment</a></h2>
+</body>
+</html>
