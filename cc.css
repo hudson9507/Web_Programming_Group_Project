@@ -1,6 +1,5 @@
 html, body{
     height: 100%;
-    background-color: burlywood;
     padding: 10% 5% 10% 5%;
 }
 html {
@@ -9,6 +8,7 @@ html {
   background-size: cover;
   background-attachment: fixed;
 }
+
 .cc{
     margin: 1rem;
     padding: 1rem;
@@ -21,24 +21,45 @@ html {
     display: flex;
     flex-direction: column;
     gap: .5rem;
- }
- .Credit{
+}
+button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+.Credit{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 100px;
     font-weight: bold;
     color: red;
-    margin-top: -3rem;
-    margin-bottom: -3rem;
+    margin-top: -11rem;
+    margin-bottom: 1rem;
 
- }
+}
 
- h2 {
-    text-align: center;
+h2 {
+    background-color : green;
+    text-align: left;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
     color: blue;
-    margin-top: -3rem;
-    margin-bottom: -3rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    margin-left: 1.5rem;
+}
+
+.content{
+    height: 100%;
+    width: auto;
+    background-color: burlywood;
+    border-radius: 15px;
  }
