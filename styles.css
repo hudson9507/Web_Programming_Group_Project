@@ -31,12 +31,9 @@ td{
     border-top: none;
     align-items: center;
     text-align: center;
-    padding: 0.25rem;
-}
-th{
-    border: 1px solid black;
-    align-items: center;
-    text-align: center;
+    padding: none;
+    margin: none;
+    position: relative;
 }
 .mainContent{
     height: 100%;
@@ -47,10 +44,12 @@ th{
     border-radius: 10px;
 }
 .mainContent img {
-    max-height: 360px;
+    height: fit-content;
+    max-height: 500px;
     width: auto;
-    height: auto;
     display: block;
+    object-fit: contain;
+    image-rendering:optimizeSpeed;
     margin:auto;
 }
 .router{
@@ -64,4 +63,8 @@ th{
     background-color: yellow;
     align-content: center;
     text-align: center;
+}
+.textCont{
+    font-family: cursive;
+    font-size: x-large;
 }

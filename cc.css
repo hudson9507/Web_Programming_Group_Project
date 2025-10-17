@@ -22,16 +22,29 @@ html {
     flex-direction: column;
     gap: .5rem;
 }
+
+.cc2{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
 button{
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     font-weight: bold;
-    background-color: green;
+    background-color: limegreen;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: .5rem 1rem;
+    padding: .2rem 2rem;
     cursor: pointer;
+    box-shadow: 2px 4px 2px black;
 }
 
 .Credit{
@@ -41,12 +54,12 @@ button{
     font-weight: bold;
     color: red;
     margin-top: -11rem;
-    margin-bottom: 1rem;
+    margin-bottom: -1rem;
+    text-shadow: 5px 5px 1px black;
 
 }
 
 h2 {
-    background-color : green;
     text-align: left;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
@@ -62,4 +75,5 @@ h2 {
     width: auto;
     background-color: burlywood;
     border-radius: 15px;
+    
  }
