@@ -8,6 +8,7 @@
     <script src="ccScript.js" defer></script>
 </head>
 <body>
+    <audio class="coin" src="./public/sounds/coin.mp3" preload="auto" playsinline></audio>
     <div class="content">
         <p class="Credit">CREDIT CARD</p>
         <form action="/process-payment" method="POST">
@@ -28,11 +29,10 @@
         <input type="month" id="expirationDate" name="expirationDate" required>
         </div>
         <div class="cc2">
-        <button class="submit" type="submit">Time to gamble!</button>
+        <button class="submit" type="button">Time to gamble!</button>
         </div>
         </form>
         <h2><a href="index.html">Take me back</a></h2>
     </div>
-    <audio id="coin" src = "coin.mp3/audio>"
 </body>
 </html>

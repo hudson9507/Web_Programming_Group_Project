@@ -6,9 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     butin.addEventListener('mouseout', function() {
         butin.style.backgroundColor = 'limegreen';
     });
-});
-
-document.getElementById('.submit').addEventListener('click', function() {
-    const audio = document.getElementById('clickSound');
-    audio.play();
+    butin.addEventListener('click', function() {
+        const audio = document.querySelector('.coin');
+        if (!audio) {
+            console.log('Audio element with class "coin" not found.');
+            return;
+        }
+        audio.play();
+    });
 });
