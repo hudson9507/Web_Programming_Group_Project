@@ -1,69 +1,66 @@
 html, body {
     height: 100%;
     background-color: black;
+    padding:0;
+    margin:0;
   }
 body{
-   min-height: 100vh;
+   height: 100vh;
    display: flex;
    flex-direction: column;
 }
 header{
+    flex:1 0 0%;
     background-color: red;
-    padding: 1%;
-    flex:0.5;
-    border-radius: 10px;
     align-content: center;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 24px;
     font-weight: bold;
-}
-main{
-    width: 100%;
-    flex: 9.5;
-}
-table{
-    border-collapse: collapse;
-}
-td{
-    border-bottom: none;
-    border-top: none;
-    align-items: center;
-    text-align: center;
-    padding: none;
-    margin: none;
-    position: relative;
-}
-.mainContent{
-    height: 100%;
-    width: 100%;
-    background-color: forestgreen;
-    border-color:blueviolet;
-    border-width: 5px;
-    border-radius: 10px;
-}
-.mainContent img {
-    height: fit-content;
-    max-height: 500px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-    image-rendering:optimizeSpeed;
-    margin:auto;
-}
-.router{
-    height: 50%;
     display: flex;
     align-content: center;
-    margin:1rem;
+    margin: 0 0 1rem 0;
+}
+header > * { margin: 0; }
+main{
+    flex: 9 0 0%;
+    width: 90%;
+    padding: 1%;
+    margin:  0 auto;
+    background-color: darkgreen;
+    border-radius: 10px;
+    min-height: 0;
+    overflow:scroll;
+}
+td{
+    color:white;
+    font-family: cursive;
+    font-size: x-large;
+    width: 25%;
+    height: 50%;
+    vertical-align: middle;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+}
+.mainContent{
+    border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+}
+.mainContent img {
+    height: 96%;
+    width:96%;
+    border-radius: 3px;
+    object-fit: contain;
+    image-rendering:optimizeSpeed;
+    margin:2%;
 }
 .routets{
-    flex: 1;
-    background-color: yellow;
+    flex:1;
     align-content: center;
     text-align: center;
 }
-.textCont{
-    font-family: cursive;
-    font-size: x-large;
+.tdimg{
+    background-color: red;
 }
