@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Card</title> 
-    <link rel="stylesheet" href="paymentStyles.css">
-    <script src="paymentScript.js" defer></script>
-</head>
-<body>
-    <audio class="coin" src="./public/sounds/coin.mp3" preload="auto" playsinline></audio>
-    <div class="content">
-        <p class="Credit">CREDIT CARD</p>
-        <form action="/process-payment" method="POST">
-        <div class="cc">
-            <label for="name">Cardholder Name: </label>
-            <input type="text" id="name" name="name" placeholder="firstName lastName" required>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Credit Card</title> 
+        <link rel="stylesheet" href="paymentStyles.css">
+        <script src="paymentScript.js" defer></script>
+    </head>
+    <body>
+        <audio class="coin" src="./public/sounds/coin.mp3" preload="auto" playsinline></audio>
+        <div class="content">
+            <p class="Credit">CREDIT CARD</p>
+            <form action="/process-payment" method="POST">
+                <div class="cc">
+                    <label for="name">Cardholder Name: </label>
+                    <input type="text" id="name" name="name" placeholder="firstName lastName" required>
+                </div>
+                <div class="cc">
+                    <label for="cardNumber">Card Number: </label>
+                    <input type="text" id="cardNumber" name="cardNumber" maxlength="19" placeholder="1234 5678 9123 4567" required>
+                </div>
+                <div class="cc">
+                    <label for="cvv">CVV: </label>
+                    <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123" required>
+                </div>
+                <div class="cc">
+                    <label for="expiryDate">Expiration Date: </label>
+                    <input type="month" id="expirationDate" name="expirationDate" required>
+                </div>
+                <div class="cc2">
+                    <button class="submit" type="button">Time to gamble!</button>
+                </div>
+            </form>
+            <h2><a href="index.html">Take me back</a></h2>
         </div>
-        <div class="cc">
-            <label for="cardNumber">Card Number: </label>
-            <input type="text" id="cardNumber" name="cardNumber" maxlength="19" placeholder="1234 5678 9123 4567" required>
-        </div>
-        <div class="cc">
-        <label for="cvv">CVV: </label>
-        <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123" required>
-        </div>
-        <div class="cc">
-        <label for="expiryDate">Expiration Date: </label>
-        <input type="month" id="expirationDate" name="expirationDate" required>
-        </div>
-        <div class="cc2">
-        <button class="submit" type="button">Time to gamble!</button>
-        </div>
-        </form>
-        <h2><a href="index.html">Take me back</a></h2>
-    </div>
 </body>
 </html>

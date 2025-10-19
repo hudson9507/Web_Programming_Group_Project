@@ -8,7 +8,35 @@ html {
   background-size: cover;
   background-attachment: fixed;
 }
-
+button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: limegreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: .2rem 2rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 2px black;
+}
+h2 {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    margin-left: 1.5rem;
+}
+.content{
+    height: 100%;
+    width: auto;
+    background-color: burlywood;
+    border-radius: 15px;
+    
+ }
 .cc{
     margin: 1rem;
     padding: 1rem;
@@ -22,7 +50,6 @@ html {
     flex-direction: column;
     gap: .5rem;
 }
-
 .cc2{
     margin: 1rem;
     padding: 1rem;
@@ -34,19 +61,6 @@ html {
     flex-direction: column;
     gap: .5rem;
 }
-button{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
-    font-weight: bold;
-    background-color: limegreen;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: .2rem 2rem;
-    cursor: pointer;
-    box-shadow: 2px 4px 2px black;
-}
-
 .Credit{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -58,22 +72,3 @@ button{
     text-shadow: 5px 5px 1px black;
 
 }
-
-h2 {
-    text-align: left;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: blue;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    margin-left: 1.5rem;
-}
-
-.content{
-    height: 100%;
-    width: auto;
-    background-color: burlywood;
-    border-radius: 15px;
-    
- }
