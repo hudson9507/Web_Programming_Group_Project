@@ -8,10 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     butin.addEventListener('click', function() {
         const audio = document.querySelector('.coin');
-        if (!audio) {
-            console.log('Audio element with class "coin" not found.');
-            return;
-        }
         audio.play();
     });
 });
