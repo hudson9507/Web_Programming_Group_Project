@@ -23,6 +23,18 @@ header{
     margin: 0 0 1rem 0;
 }
 header > * { margin: 0; }
+footer{
+    flex:1 0 0%;
+    background-color: crimson;
+    align-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-content: center;
+    margin: 1rem 0 0 0;
+}
 main{
     flex: 9 0 0%;
     min-height:  90vh;
@@ -65,4 +77,13 @@ td{
 }
 .tdimg{
     background-color: crimson;
+}
+#rgb{
+    animation: rainbow 1s linear infinite;
+}
+@keyframes rainbow {
+    0%{background-color: red;}
+    33%{background-color: green;}
+    66%{background-color: blue;}
+    100%{background-color: red;}
 }
