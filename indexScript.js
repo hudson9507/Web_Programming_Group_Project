@@ -1,2 +1,4 @@
-//const header = document.querySelector('header');
-//header.textContent = 'Welcome to the Gambling Site!!!!!!!! :steamhappy + js works';
+document.addEventListener('DOMContentLoaded', function() {
+    const balanceDisplay = document.getElementById('balanceDisplay');
+    balanceDisplay.textContent = '$' + (localStorage.getItem('balance') || '0');
+});

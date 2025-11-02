@@ -11,7 +11,7 @@
         <audio class="coin" src="./public/sounds/coin.mp3" preload="auto" playsinline></audio>
         <div class="content">
             <p class="Credit">CREDIT CARD</p>
-            <form action="/process-payment" method="POST">
+            <form action="/process-payment" method="POST" id='paymentForm'>
                 <div class="cc">
                     <label for="name">Cardholder Name: </label>
                     <input type="text" id="name" name="name" placeholder="John Doe" required>
@@ -27,6 +27,10 @@
                 <div class="cc">
                     <label for="expiryDate">Expiration Date: </label>
                     <input type="month" id="expirationDate" name="expirationDate" required>
+                </div>
+                <div class='cc'>
+                    <label for="amount">Amount to Add: </label>
+                    <input type="number" id="amount" name="amount" min="1" placeholder="50" required>
                 </div>
                 <div id="formErrors"></div>
                 <div class="cc2">

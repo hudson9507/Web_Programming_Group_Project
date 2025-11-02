@@ -1,3 +1,4 @@
+//Basic interactivity for the payment page including sound on the submit button
 document.addEventListener('DOMContentLoaded', function() {
     const butin = document.querySelector('.submit');
     butin.addEventListener('mouseover', function() {
@@ -7,30 +8,33 @@ document.addEventListener('DOMContentLoaded', function() {
         butin.style.backgroundColor = 'limegreen';
     });
     butin.addEventListener('click', function() {
-        const audio = document.querySelector('.coin');
-        audio.play();
         checkform();
     });
 });
+
+//Function to validate the payment form
 function checkform() {
+    //Get form elements
     const form = document.querySelector('form');
     const formErrors = document.getElementById('formErrors');
     const inputs = form.querySelectorAll('input');
-
     const fullName = document.getElementById('name');
     const cardNumber = document.getElementById('cardNumber');
     const cvv = document.getElementById('cvv');
     const exp = document.getElementById('expirationDate');
+    const amount = document.getElementById('amount');
     let messages = [];
 
+    //Clear previous errors
     inputs.forEach(input => { if (input.classList.contains('error')) { input.classList.remove('error') } });
 
+    //Check for form errors
     if (fullName.value.length < 1){
         messages.push('Name is required');
         fullName.classList.add('error');
     }
     if(cardNumber.value.length < 13 || cardNumber.value.length > 19){
-        messages.push('Card number must be between 13 and 19 digits');
+        messages.push('Card number must be between 13 and 19 digits.');
         cardNumber.classList.add('error');
     }
     if(cvv.value.length < 3 || cvv.value.length > 4){
@@ -41,7 +45,12 @@ function checkform() {
         messages.push('Expiration date is required');
         exp.classList.add('error');
     }
+    if(amount.value === '' || amount.value <= 0 || amount.value % 1 !== 0){
+        messages.push('Please enter a valid integer number to add');
+        amount.classList.add('error');
+    }
 
+    //Display errors
     if (messages.length > 0) {
         formErrors.classList.remove('hide');
         formErrors.innerHTML = '<ul>';
@@ -52,5 +61,37 @@ function checkform() {
     } else {
       formErrors.classList.add('hide');
       formErrors.innerHTML = '';
+      addMoney(amount.value);
+    }
+}
+
+//Function to add money to the user's balance
+function addMoney(amount) {
+    const addValue = parseInt(amount, 10);
+
+    //Get the current balance from localStorage, or default to 0 if not set
+    let currentBalance = parseInt(localStorage.getItem('balance'), 10);
+    if(isNaN(currentBalance)) {
+        currentBalance = 0;
+    }
+
+    //Update the balance
+    const newBalance = currentBalance + addValue;
+
+    //Save it back to localStorage
+    localStorage.setItem('balance', newBalance);
+
+    //Play coin sound and redirect after sound ends
+    const audio = document.querySelector('.coin');
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});           // ignore autoplay errors
+        audio.addEventListener('ended', () => { // go after sound finishes
+        document.getElementById('paymentForm')?.reset();
+        window.location.href = 'index.html';
+        }, { once: true });
+    } else {
+        document.getElementById('paymentForm')?.reset();
+        window.location.href = 'index.html';
     }
 }
