@@ -73,3 +73,14 @@ h2 {
     text-shadow: 5px 5px 1px black;
 
 }
+.hide {
+	display: none;
+}
+input.error  {
+   border: 2px solid red;
+}
+#formErrors {
+    margin:auto;
+    width: fit-content;
+   color: red;
+}
