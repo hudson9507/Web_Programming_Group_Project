@@ -7,6 +7,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  max-height: 30%;
 }
 button{
     font-family: 'Times New Roman', Times, serif;
@@ -32,12 +33,12 @@ h2 {
     margin-left: 1.5rem;
 }
 .content{
-    height: 110%;
+    height: 62vh;
     width: auto;
     background-color: burlywood;
     border-radius: 15px;
-    
- }
+    box-shadow: 5px 5px 5px black;
+}       
 .cc{
     margin: 1rem;
     padding: 1rem;
@@ -50,6 +51,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    box-shadow: 5px 5px 5px grey;
 }
 .cc2{
     margin: 1rem;
