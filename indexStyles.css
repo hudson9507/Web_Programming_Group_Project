@@ -25,7 +25,7 @@ header{
 header > * { margin: 0; }
 footer{
     flex:0.5 0 0%;
-    background-color: crimson;
+    background-color: #9E0D2A;
     align-content: center;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -79,7 +79,7 @@ td{
     text-align: center;
 }
 .tdimg{
-    background-color: crimson;
+    background-color: #C01032;
 }
 #rgb{
     animation: rainbow 1s linear infinite;
