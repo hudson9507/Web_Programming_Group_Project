@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
         checkform();
     });
 });
+//Function to allow only digits in specific input fields
+function allowOnlyDigits(input) {
+    input.addEventListener('input', () =>{
+        input.value = input.value.replace(/\D/g, '');
+    });
+}
+allowOnlyDigits(cardNumber);
+allowOnlyDigits(cvv);
+allowOnlyDigits(amount);
 
 //Function to validate the payment form
 function checkform() {
@@ -33,11 +42,11 @@ function checkform() {
         messages.push('Name is required');
         fullName.classList.add('error');
     }
-    if(cardNumber.value.length < 13 || cardNumber.value.length > 19){
+    if(!/^\d{13,19}$/.test(cardNumber.value)){
         messages.push('Card number must be between 13 and 19 digits.');
         cardNumber.classList.add('error');
     }
-    if(cvv.value.length < 3 || cvv.value.length > 4){
+    if(!/^\d{3,4}$/.test(cvv.value)){
         messages.push('CVV must be 3 or 4 digits');
         cvv.classList.add('error');
     }

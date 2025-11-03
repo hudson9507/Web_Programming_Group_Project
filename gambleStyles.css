@@ -38,6 +38,14 @@ footer{
 footer p{
     margin: auto;
 }
+img{
+    height:auto;
+    width:33%;
+    border-radius: 3px;
+    object-fit: contain;
+    image-rendering:optimizeSpeed;
+    margin:2%;
+}
 main{
     flex: 9 0 0%;
     min-height:  90vh;
@@ -88,4 +96,13 @@ td{
     80%{background-color: indigo;}
     94%{background-color: violet;}
     100%{background-color: red;}
+}
+.slots{
+    color: black;
+}
+.blackjack{
+    color:black;
+}
+.roulette{
+    color:black;
 }
