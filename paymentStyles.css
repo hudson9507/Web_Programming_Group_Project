@@ -33,7 +33,7 @@ h2 {
     margin-left: 1.5rem;
 }
 .content{
-    height: 62vh;
+    height: auto;
     width: auto;
     background-color: burlywood;
     border-radius: 15px;
