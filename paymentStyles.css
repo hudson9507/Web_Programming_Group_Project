@@ -35,7 +35,7 @@ h2 {
 .content{
     height: auto;
     width: auto;
-    background-color: burlywood;
+    background-color: #7D0A22;
     border-radius: 15px;
     box-shadow: 5px 5px 5px black;
 }       
@@ -44,14 +44,14 @@ h2 {
     padding: 1rem;
     border: 2px solid black;
     border-radius: 10px;
-    background-color: yellow;
+    background-color: #FFC2CB;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px black;
 }
 .cc2{
     margin: 1rem;
@@ -69,7 +69,7 @@ h2 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 100px;
     font-weight: bold;
-    color: red;
+    color: #E84B5C;
     margin-top: -11rem;
     margin-bottom: -1rem;
     text-shadow: 5px 5px 1px black;
@@ -85,4 +85,15 @@ input.error  {
     margin:auto;
     width: fit-content;
    color: red;
+}
+
+
+a:link {
+    color: #E84B5C;
+}
+a:hover{
+    color: #E84B5C;
+}
+a:visited {
+    color: #C01032;
 }
