@@ -1,0 +1,142 @@
+body {
+   font-family: 'Times New Roman', Times, serif, sans-serif;
+   background: #222;
+   color: #f5f5f5;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 40px;
+}
+
+h1 {
+   margin-bottom: 20px;
+}
+
+.roulette-layout {
+   display: flex;
+   gap: 40px;
+   align-items: center;
+   justify-content: center;
+}
+
+.wheel-section {
+   position: relative;
+   width: 220px;
+   height: 260px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.pointer {
+   width: 0;
+   height: 0;
+   border-left: 14px solid transparent;
+   border-right: 14px solid transparent;
+   border-bottom: 24px solid #f1c40f;
+   margin-bottom: 4px;
+}
+
+.roulette-wheel {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   border: 6px solid #111;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+   background: conic-gradient(
+      #2ecc71 0deg 15deg,  
+      #e74c3c 15deg 35deg,  
+      #111 35deg 55deg,     
+      #e74c3c 55deg 75deg,
+      #111 75deg 95deg,
+      #e74c3c 95deg 115deg,
+      #111 115deg 135deg,
+      #e74c3c 135deg 155deg,
+      #111 155deg 175deg,
+      #e74c3c 175deg 195deg,
+      #111 195deg 215deg,
+      #e74c3c 215deg 235deg,
+      #111 235deg 255deg,
+      #e74c3c 255deg 275deg,
+      #111 275deg 295deg,
+      #e74c3c 295deg 315deg,
+      #111 315deg 335deg,
+      #e74c3c 335deg 360deg
+   );
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+   font-weight: bold;
+   font-size: 24px;
+   transition: transform 2s ease-out;
+}
+
+
+.panels {
+   background: #333;
+   border-radius: 12px;
+   padding: 20px 30px;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+   min-width: 260px;
+}
+
+.bet-panel,
+.result-panel {
+   min-width: 220px;
+}
+
+label {
+   display: block;
+   margin-bottom: 8px;
+}
+
+select {
+   width: 100%;
+   padding: 8px;
+   border-radius: 6px;
+   border: 1px solid #555;
+   margin-bottom: 12px;
+}
+
+button {
+   padding: 10px 24px;
+   font-size: 16px;
+   border-radius: 8px;
+   border: none;
+   cursor: pointer;
+   background: #e74c3c;
+   color: white;
+   font-weight: bold;
+}
+
+button:disabled {
+   opacity: 0.6;
+   cursor: default; 
+}
+
+button:hover:enabled {
+   background: #d35400;
+}
+
+.result-panel h2 {
+   margin-top: 0;
+}
+
+#message {
+   margin-top: 10px;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.win {
+   color: #2ecc71;
+}
+
+.lose {
+   color: #e74c3c;
+}
