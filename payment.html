@@ -8,7 +8,9 @@
         <script src="paymentScript.js" defer></script>
     </head>
     <body>
+        <!-- Audio element for coin sound effect -->
         <audio class="coin" src="./public/sounds/coin.mp3" preload="auto" playsinline></audio>
+        <!--Doesn't actually submit anything due to security reasons -->
         <div class="content">
             <p class="Credit">CREDIT CARD</p>
             <form action="/process-payment" method="POST" id='paymentForm'>
@@ -37,6 +39,7 @@
                     <button class="submit" type="button">Time to gamble!</button>
                 </div>
             </form>
+            <!-- more navigation links -->
             <h2><a href="index.html">Take me back</a></h2>
         </div>
 </body>
