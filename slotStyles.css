@@ -6,6 +6,11 @@ body {
    flex-direction: column;
    align-items: center;
    margin-top: 60px;
+   background-image: url('./public/img/Slotsplay.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: center center;
 }
 
 h1 {
@@ -16,6 +21,20 @@ h1 {
    display: flex;
    gap: 20px;
    margin-bottom: 20px;
+}
+
+/* red bubble surrounding the slots game area */
+.slots-layout{
+   background-color: rgba(192,16,50,0.82); /* #C01032 at 92% opacity */
+   padding: 32px 40px;
+   border-radius: 18px;
+   box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+   max-width: 900px;
+   margin: 80px auto 40px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   backdrop-filter: blur(3px);
 }
 
 .slot {
