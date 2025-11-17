@@ -46,6 +46,7 @@ h1 {
     text-align: center;
 }
 
+<<<<<<< HEAD
 
 button {
    padding: 2px 10px;
@@ -134,4 +135,13 @@ input::-webkit-inner-spin-button {
     height: 150px;
     display: flex;
     gap: 10px;
+=======
+.cards{
+    justify-content: center;
+}
+
+.card{
+    height: 150px;
+    width: auto;
+>>>>>>> 4e2ab2898e1753e323d09172614667ff6bf4a5d6
 }
