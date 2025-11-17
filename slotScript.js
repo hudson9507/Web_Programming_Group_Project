@@ -19,7 +19,10 @@ balanceDisplay.textContent = 'Balance: $' + (currentBalance);
 //Function to handle spinning the slot machine
 function spin() {
    const betAmt = parseInt(document.getElementById("betAmount").value);
+   //check if bet amount is valid and user has enough balance
    if (!isNaN(betAmt) && betAmt != 0 && currentBalance >= betAmt) {
+      //randomly select symbols for each slot while keeping track of the first symbol's index
+      //keep the first symbol's index to determine the multiplier in case of a win
       const n1 = Math.floor(Math.random() * symbols.length);
       const s1 = symbols[n1]
       const s2 = symbols[Math.floor(Math.random() * symbols.length)];
@@ -28,6 +31,7 @@ function spin() {
       document.getElementById("slot2").src = s2;
       document.getElementById("slot3").src = s3;
       let message = document.getElementById("message");
+      //check for win condition or default to loss
       if (s1 === s2 && s2 === s3) {
          handleWin(betAmt, multipliers[n1]);
       } else {
@@ -41,7 +45,7 @@ function spin() {
 //Function to handle a win
 function handleWin(bet, mult){
    //set message text
-   message.textContent = `🎉 JACKPOT! YOU WIN! YOU WON ${bet*mult}🎉`;
+   message.textContent = `🎉 JACKPOT! YOU WIN! YOU WON ${bet*mult}!🎉`;
    //update balance
    currentBalance = parseInt(currentBalance + (bet * mult));
    localStorage.setItem('balance', currentBalance);
