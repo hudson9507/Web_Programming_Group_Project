@@ -1,9 +1,12 @@
+//initialize global variables for the game
 const values = [2,3,4,5,6,7,8,9,10,"J","Q","K","A"];
 const faces = ["club","diamond","heart","spade"];
 let playerHand = [];
 let dealerHand = [];
 let playerScore = 0;
 let dealerScore = 0;
+
+//get HTML elements
 const usercard1 = document.getElementById('usercard1');
 const usercard2 = document.getElementById('usercard2');
 const usercard3 = document.getElementById('usercard3');
@@ -20,11 +23,16 @@ const deal = document.getElementById('dealBtn');
 const hit = document.getElementById('hitBtn');
 const stand = document.getElementById('standBtn');
 const message = document.getElementById('message');
+//get player balance from localStorage
 let playerBalance = parseInt(localStorage.getItem('balance'));
 
+//Function to start a new game of blackjack
 function game(){
+    //reset game state at tjhe start of a new game to ensure no leftover data
     resetGame();
+    //get bet amount from input
     const betInput = parseInt(document.getElementById('betAmount').value);
+    //check if bet amount is valid and user has enough balance then deal initial cards
     if(betInput > 0 && !isNaN(betInput) && betInput <= playerBalance){
         playerHand = [values[Math.floor(Math.random() * values.length)], values[Math.floor(Math.random() * values.length)], 0, 0, 0];
         dealerHand = [values[Math.floor(Math.random() * values.length)], values[Math.floor(Math.random() * values.length)], 0, 0, 0];
@@ -39,7 +47,9 @@ function game(){
     }
 }
 
+//Function to evaluate the game state
 function evaluateGame(initial, standed){
+    //check for blackjack or win/loss conditions
     if (dealerScore == 21 && playerScore == 21){
             message.textContent = "It's a push! Both you and the dealer have Blackjack!";
             resetGame();
@@ -49,16 +59,25 @@ function evaluateGame(initial, standed){
     } else if (playerScore == 21){
         message.textContent = `Blackjack! You win! ${parseInt(document.getElementById('betAmount').value) * 2}!`;
         handleWin(parseInt(document.getElementById('betAmount').value));
+    //if this is the initial deal disable deal button and enable hit/stand buttons
     } else if (initial == true){
         deal.disabled = true;
         hit.disabled = false;
         stand.disabled = false;
+    //if the player has stood evaluate final scores
     } else if (standed == true){
+        //determine winner or push
         if (playerScore == dealerScore){
             message.textContent = "It's a push!";
             deal.disabled = false;
             hit.disabled = true;
             stand.disabled = true;
+        }else if (dealerScore > 21){
+            message.textContent = `Dealer busts! You win! You won ${parseInt(document.getElementById('betAmount').value) * 2}!`;
+            handleWin(parseInt(document.getElementById('betAmount').value));
+        } else if (21 < playerScore){
+            message.textContent = `You lose! You lost ${parseInt(document.getElementById('betAmount').value)}!`;
+            handleLoss(parseInt(document.getElementById('betAmount').value));
         } else if (playerScore > dealerScore){
             message.textContent = `You win! You won ${parseInt(document.getElementById('betAmount').value) * 2}!`;
             handleWin(parseInt(document.getElementById('betAmount').value));
@@ -70,6 +89,8 @@ function evaluateGame(initial, standed){
         return;
     }
 }
+
+//Function to calculate the score of a hand
 function calculateHand(cards, dealer = false){
     let aceCount = 0;
     for (card in cards) {
@@ -113,6 +134,7 @@ function calculateHand(cards, dealer = false){
     }
 }
 
+//Function to handle player hitting or standing
 function hitOrStand(didHit){
     if (didHit == true){
         if (playerHand[2] == 0){
@@ -140,6 +162,7 @@ function hitOrStand(didHit){
     }
 }
 
+//Function for dealer's logic
 function dealerLogic(){
     if (dealerScore < 15){
         if (dealerHand[2] == 0){
@@ -156,6 +179,7 @@ function dealerLogic(){
     }
 }
 
+//Function to handle a win
 function handleWin(money){
     deal.disabled = false;
     hit.disabled = true;
@@ -166,6 +190,7 @@ function handleWin(money){
     return;
 }
 
+//Function to handle a loss
 function handleLoss(money){
     deal.disabled = false;
     hit.disabled = true;
@@ -175,6 +200,7 @@ function handleLoss(money){
     return;
 }
 
+//Function to reset the game state
 function resetGame(){
     playerHand = [];
     dealerHand = [];
@@ -195,6 +221,7 @@ function resetGame(){
     scoreDisplayPlayer.textContent = playerScore;
 }
 
+//Function to update the card images and balance display
 function updatecardDisplay(){
     usercard1.src = `public/img/blackjack/${faces[Math.floor(Math.random() * 4)]}/${playerHand[0]}.png`;
     usercard2.src = `public/img/blackjack/${faces[Math.floor(Math.random() * 4)]}/${playerHand[1]}.png`;
@@ -218,8 +245,10 @@ function updatecardDisplay(){
     if (dealerHand[4] != 0){
         dealercard5.src = `public/img/blackjack/${faces[Math.floor(Math.random() * 4)]}/${dealerHand[4]}.png`;
     }
+    document.getElementById('balanceDisplay').textContent = '$' + playerBalance;
 }
 
+//Function to handle Ace value choice for player and dealer
 function handleAce(index, dealer){
     if (dealer == false) {
         let choice = prompt(`You drew an Ace! Should it count as 1 or 11? You currently have: ${playerScore}`, "11");
@@ -242,6 +271,7 @@ function handleAce(index, dealer){
     }
 }
 
+//Add event listeners to buttons
 deal.addEventListener('click', game);
 hit.addEventListener('click', () => hitOrStand(true));
 stand.addEventListener('click', () => hitOrStand(false));

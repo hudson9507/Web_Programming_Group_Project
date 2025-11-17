@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8" />
-   <title>Slot Machine</title>
+   <!--Set page title and import stylesheets and scripts-->
+   <title>Blackjack</title>
    <link rel="stylesheet" href="blackjackStyles.css">
     <script src="blackjackScript.js" defer></script>
 </head>
 <body>
+    <!--header with flex children and appropriate classes-->
     <header>      
         <div class="routets"><a href="payment.html">CREDIT CARD</a></div>
         <div class="routets"><a href="index.html">HOME</a></div>
@@ -15,7 +17,9 @@
     <main>
         <h1>BLACKJACK</h1>
         <div class="game-bubble">
+            <!--contains the game-->
             <div class="game-container">
+                <!--contains the dealers portion of the game-->
                 <div class="dealer-section">
                     <h2>Dealer's Hand</h2>
                     <div id="dealer-cards" class="cards">
@@ -27,6 +31,7 @@
                     </div>
                     <p id="dealer-score">Score: 0</p>
                 </div>
+                <!--contains the players portion of the game-->
                 <div class="player-section">
                     <h2>Your Hand</h2>
                     <div id="player-cards" class="cards">
@@ -39,15 +44,16 @@
                     <p id="player-score">Score: 0</p>
                 </div>
             </div>
+            <!--controls for the user, these are enabled and disabled througout the match-->
             <div class="controls">
                 <input type="number" id="betAmount" placeholder="Enter your bet amount" min="1" />
                 <button id="dealBtn">DEAL</button>
                 <button id="hitBtn" disabled>HIT</button>
                 <button id="standBtn" disabled>STAND</button>
             </div>
+            <!--message area to display game status and various game updates-->
             <div id="message"></div>
         </div>
     </main>
-    <script src="indexScript.js"></script>
 </body>
 </html>

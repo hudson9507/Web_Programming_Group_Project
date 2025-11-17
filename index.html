@@ -3,23 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--set page title and import script and styles-->
         <title>Gambling Site</title>
         <link rel="stylesheet" href="indexStyles.css">
         <script src="indexScript.js" defer></script>
     </head>
     <body>
+        <!--header with flex children and appropriate classes-->
         <header>
             <div class="routets"><a href="payment.html">CREDIT CARD</a></div>
             <div class="routets"><a href="gamble.html">GAMBLE</a></div>
             <div class="routets">Current Balance: <p id='balanceDisplay'></p></div>
         </header>
         <main>
+            <!--all page specific content contained in the table-->
             <table class="mainContent">
+                <!--first row advertises page adding funds as well as images-->
                 <tr>
                     <td class="tdimg" style="border-radius: 10px 10px 0px 0px;" colspan="1"><img src="./public/img/king.png"></td>
                     <td colspan="1"><p>Welcome to the gambling website! Please see the beautiful images of satisfied customers and add money to your account by heading to the credit card page, or by clicking</p><div id="rgb" ><a href="payment.html">HERE</a></div></td>
                     <td class="tdimg" style="border-radius: 10px 10px 0px 0px;" colspan="1"><img src="./public/img/manGambling.png"></td>
                 </tr>
+                <!--second row links to the gambling selection page and contains images-->
                 <tr>
                     <td class="tdimg" style="border-radius: 0px 0px 10px 10px;" colspan="1"><img src="./public/img/Cards2.png"></td>
                     <td colspan="1"><p>Once you have added money to your account please go to the gambling page, or by clicking</p><div id='rgb'><a href='./gamble.html'>HERE</a></div></td>
@@ -27,8 +32,5 @@
                 </tr>
             </table>
         </main>
-        <footer>
-            <p><a>FAQ</a></p>
-        </footer>
     </body>
 </html>
