@@ -68,9 +68,15 @@ function checkform() {
         }
         formErrors.innerHTML += '</ul>';
     } else {
-      formErrors.classList.add('hide');
-      formErrors.innerHTML = '';
-      addMoney(amount.value);
+            formErrors.classList.add('hide');
+            formErrors.innerHTML = '';
+            try {
+                addMoney(amount.value);
+            } catch (err) {
+                console.error('Error adding money:', err);
+                formErrors.classList.remove('hide');
+                formErrors.innerHTML = '<p>Unexpected error processing payment. Please try again.</p>';
+            }
     }
 }
 
@@ -79,8 +85,13 @@ function addMoney(amount) {
     const addValue = parseInt(amount, 10);
 
     //Get the current balance from localStorage, or default to 0 if not set
-    let currentBalance = parseInt(localStorage.getItem('balance'), 10);
-    if(isNaN(currentBalance)) {
+    let currentBalance = 0;
+    try {
+        const stored = localStorage.getItem('balance');
+        currentBalance = parseInt(stored, 10);
+        if (isNaN(currentBalance)) currentBalance = 0;
+    } catch (err) {
+        console.error('Failed to read balance from localStorage:', err);
         currentBalance = 0;
     }
 
@@ -88,7 +99,12 @@ function addMoney(amount) {
     const newBalance = currentBalance + addValue;
 
     //Save it back to localStorage
-    localStorage.setItem('balance', newBalance);
+    try {
+        localStorage.setItem('balance', newBalance);
+    } catch (err) {
+        console.error('Failed to save balance to localStorage:', err);
+        // continue — user still hears coin and is redirected, but storage failed
+    }
 
     //Play coin sound and redirect after sound ends
     const audio = document.querySelector('.coin');
