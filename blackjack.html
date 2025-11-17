@@ -13,33 +13,41 @@
         <div class="routets">Balance: <span id='balanceDisplay'></span></div>
     </header>
     <main>
-        <h1>Blackjack</h1>
-        <h3 id='balanceDisplay'></h3>
-        <div class="game-container">
-            <div class="dealer-section">
-                <h2>Dealer's Hand</h2>
-                <div id="dealer-cards" class="cards">
-                    <img class='card' id='dealerCard1' src="public/img/blackjack/cardBackRed.png">
-                    <img class='card' id='dealerCard2' src="public/img/blackjack/cardBackRed.png">
+        <h1>BLACKJACK</h1>
+        <div class="game-bubble">
+            <div class="game-container">
+                <div class="dealer-section">
+                    <h2>Dealer's Hand</h2>
+                    <div id="dealer-cards" class="cards">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                    </div>
+                    <p id="dealer-score">Score: 0</p>
                 </div>
-                <p>Score: <p id="dealer-score"></p></p>
-            </div>
-            <div class="player-section">
-                <h2>Your Hand</h2>
-                <div id="player-cards" class="cards">
-                    <img class='card' id='userCard1' src="public/img/blackjack/cardBackRed.png">
-                    <img class='card' id='userCard2'src="public/img/blackjack/cardBackRed.png">
+                <div class="player-section">
+                    <h2>Your Hand</h2>
+                    <div id="player-cards" class="cards">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                        <img src="public/img/blackjack/cardBackRed.png" alt="card">
+                    </div>
+                    <p id="player-score">Score: 0</p>
                 </div>
-                <p>Score: <p id="player-score"></p></p>
             </div>
+            <div class="controls">
+                <input type="number" id="betAmount" placeholder="Enter your bet amount" min="1" />
+                <button id="dealBtn">DEAL</button>
+                <button id="hitBtn" disabled>HIT</button>
+                <button id="standBtn" disabled>STAND</button>
+            </div>
+            <div id="message"></div>
         </div>
-        <div class="controls">
-            <input type="number" id="betAmount" placeholder="Enter your bet amount" min="1" />
-            <button id="dealBtn">DEAL</button>
-            <button id="hitBtn" disabled>HIT</button>
-            <button id="standBtn" disabled>STAND</button>
-        </div>
-        <div id="message"></div>
     </main>
+    <script src="indexScript.js"></script>
 </body>
 </html>
