@@ -50,8 +50,14 @@ button {
 #message {
    margin-top: 20px;
    font-size: 22px;
+   width:50%;
+   text-align: center;
 }
 
 input{
    margin-bottom:3%;
+}
+
+#balanceDisplay {
+   margin-bottom: 3%;
 }
