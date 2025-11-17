@@ -6,6 +6,30 @@
    <link rel="stylesheet" href="blackjackStyles.css">
 </head>
 <body>
+    <header></header>
+    <main>
+        <h1>Blackjack</h1>
+        <h3 id='balanceDisplay'></h3>
+        <div class="game-container">
+            <div class="dealer-section">
+                <h2>Dealer's Hand</h2>
+                <div id="dealer-cards" class="cards"></div>
+                <p id="dealer-score">Score: 0</p>
+            </div>
+            <div class="player-section">
+                <h2>Your Hand</h2>
+                <div id="player-cards" class="cards"></div>
+                <p id="player-score">Score: 0</p>
+            </div>
+        </div>
+        <div class="controls">
+            <input type="number" id="betAmount" placeholder="Enter your bet amount" min="1" />
+            <button id="dealBtn">DEAL</button>
+            <button id="hitBtn" disabled>HIT</button>
+            <button id="standBtn" disabled>STAND</button>
+        </div>
+        <div id="message"></div>
+    </main>
     <script src="blackjackScript.js"></script>
 </body>
 </html>

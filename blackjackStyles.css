@@ -1,0 +1,16 @@
+html{
+    height: 100%;
+    padding:0;
+    margin:0;
+}
+body{
+    background-image: url(./public/img/);
+}
+header{
+    height: 10%;
+    width: 100%;
+}
+main{
+    height:90%;
+    width: 90%;
+}
