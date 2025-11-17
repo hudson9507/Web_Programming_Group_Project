@@ -80,7 +80,24 @@ td{
 }
 .tdimg{
     background-color: #C01032;
+    font-family: 'Times New Roman', Times, serif;
 }
+.tdimg, h2 {
+    text-shadow : 2px 2px 4px #000000;
+}
+
+.tdText {
+    display: flex;
+    flex-direction: column;   
+    gap: 0.6rem;              
+    align-items: center;      
+    justify-content: flex-start;
+    padding: 0.6rem 1rem;     
+    width: 100%;
+    box-sizing: border-box;   
+    text-align: center;       
+}
+
 #rgb{
     animation: rainbow 1s linear infinite;
     width:25%;
@@ -105,4 +122,21 @@ td{
 }
 .roulette{
     color:black;
+}
+
+.playBtn{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: .1rem 2rem;
+    min-height: 3rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 2px black;
+}
+.playBtn:hover{
+    background-color: limegreen;
 }
