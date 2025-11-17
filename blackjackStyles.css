@@ -1,0 +1,36 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url(./public/img/cardsPile.png);
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+header{
+    height: 10%;
+    width: 100%;
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+main{
+    height:90%;
+    width: 90%;
+    background-color: #C01032;
+    margin:auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.routetes{
+    flex:1;
+    align-content: center;
+    text-align: center;
+}
