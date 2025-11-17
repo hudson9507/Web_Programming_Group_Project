@@ -6,6 +6,11 @@
    <link rel="stylesheet" href="rouletteStyles.css">
 </head>
 <body>
+   <header>
+      <div class="routets"><a href="payment.html">CREDIT CARD</a></div>
+      <div class="routets"><a href="index.html">HOME</a></div>
+      <div class="routets">Balance: <span id='balanceDisplay'></span></div>
+   </header>
    <h1>ROULETTE</h1>
 
    <div class="roulette-layout">
@@ -24,6 +29,9 @@
                <option value="odd">Odd</option>
                <option value="even">Even</option>
             </select>
+               <label for="betAmountSelect">Bet amount:</label>
+               <select id="betAmountSelect">
+               </select>
             <button id="spinButton">SPIN</button>
          </div>
 
@@ -37,5 +45,6 @@
    </div>
 
    <script src="rouletteScript.js"></script>
+   <script src="indexScript.js"></script>
 </body>
 </html>
